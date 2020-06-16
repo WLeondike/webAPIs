@@ -1,9 +1,10 @@
 var containerEl = document.querySelector(".container");
-var timer = document.querySelector(".timer");
+var timerDisplay = document.querySelector(".timer");
 var startText = document.createElement("h1");
 var startBtn = document.createElement("button");
 var questionText = document.createElement("p");
-var timer = 5
+var timer = 5;
+var index = 0;
 var questions = [
   {
     title: "Example Question 1:",
@@ -53,7 +54,7 @@ function startQuiz() {
 
 //function for the timer
 function showTimer() {
-  timerDisplay.textcontent = timer;
+  timerDisplay.textContent = timer;
   var timeInterval = setInterval(function () {
     timer--;
     timerDisplay.textContent = timer;
@@ -79,7 +80,14 @@ function nextQuestion() {
   containerEl.appendChild(answersDiv);
 };
 
+function checkAnswer(event) {
+  if (event.target.matches(".choiceBtn")) {
+    index++;
+    nextQuestion()
+  }
+}
+
 startBtn.addEventListener("click", startQuiz);
-// document.addEventListener("click", checkAnswer);
+document.addEventListener("click", checkAnswer);
 openingPage();
 
