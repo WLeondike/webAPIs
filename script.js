@@ -18,11 +18,6 @@ var timer = 50;
 var qIndex = 0;
 var questions = [
   {
-    title:"",
-    choices:"",
-    answer:"",
-  },
-  {
     title: "What tag is used to define an unordered list that is bulleted?",
     choices: ["<li>", "<ol>", "<div>", "<ul>"],
     answer: "<ul>"
@@ -77,17 +72,17 @@ function startQuiz() {
 function showTimer() {
   timerDisplay.textContent = timer;
 
-  var timeInterval = setInterval(function () {
+  timeInterval = setInterval(function () {
     timer--;
     timerDisplay.textContent = timer;
-
     if (timer === 0) {
-      clearInterval(timeInterval);
+      gameOver();
     }
+
   }, 1000);
 };
 
-//function to handle next question
+// function to handle next question
 function nextQuestion() {
   var currentQuestion = questions[qIndex];
   containerEl.textContent = "";
@@ -99,14 +94,16 @@ function nextQuestion() {
     var answerBtn = document.createElement("button");
     answerBtn.classList.add("choiceBtn");
     answerBtn.textContent = currentQuestion.choices[i];
+    answerBtn.onclick = checkAnswer;
     answersDiv.appendChild(answerBtn);
+    
   }
 
   containerEl.appendChild(answersDiv);
 
 };
 
-function checkAnswer(answerBtn) {
+function checkAnswer() {
   if (event.target.textContent === questions[qIndex].answer) {
     qIndex++;
     nextQuestion();
@@ -119,7 +116,6 @@ function checkAnswer(answerBtn) {
   }
 }
 
-
 function writeMessage(message) {
   var grade = document.createElement("p");
   grade.textContent = message;
@@ -129,6 +125,10 @@ function writeMessage(message) {
   }, 1000)
 }
 
+function gameOver(){
+  clearInterval(timeInterval)
+  containerEl.style.display = "none";
+}
+
 startBtn.addEventListener("click", startQuiz);
-document.addEventListener("click", checkAnswer);
 openingPage();
