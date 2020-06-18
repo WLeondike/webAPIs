@@ -4,10 +4,10 @@ This is a project where I will create a site using JavaScript to ask the user qu
 Unfortunately, I wasn't able to come to full completion of this project. Once the score hits 0, or you finish the quiz questions, the user is then prompted to insert their name which would save to their local storage.
 <br>
 ### Here is a picture of my home page:
-![Code Quiz home page](./images/homePage.png)
+![Code Quiz home page](/images/homePage.png)
 <br>
 ### Here is a picture of the quiz:
-![Code Quiz home page](./images/questionScreen.png)
+![Code Quiz question page](/images/questionScreen.png)
 
 Link to the quiz: <https://wleondike.github.io/webAPIs/>
 
