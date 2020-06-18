@@ -45,7 +45,7 @@ var questions = [
   {
     title: "Which of these are not a semantic tag?",
     choices: ["<article>", "<div>", "<footer>", "<nav>"],
-    answer: "Choice 2"
+    answer: "<div>"
   },
   {
     title:"Still a work in progress! Will update soon🧑🏻‍🔧 ",
