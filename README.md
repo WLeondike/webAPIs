@@ -3,11 +3,10 @@ This is a project where I will create a site using JavaScript to ask the user qu
 
 Unfortunately, I wasn't able to come to full completion of this project. Once the score hits 0, or you finish the quiz questions, the user is then prompted to insert their name which would save to their local storage.
 <br>
-### Here is a picture of my home page:
-<p><img src="/images/homePage.png" alt = "Home Page image" width=600></p>
+### Here are a few images:
 
-### Here is a picture of the quiz:
-<p><img src="/images/questionScreen.png" alt = "Question Screen Image" width=600></p>
+<img src="./Images/homePage.png" alt = "Home Page image" width=600>
+<img src="./Images/questionScreen.png" alt = "Question Screen Image" width=600>
 
 Link to the quiz: <https://wleondike.github.io/webAPIs/>
 
